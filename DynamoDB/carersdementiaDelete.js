@@ -8,11 +8,14 @@ exports.handler = async (event, context) => {
 	let responseBody = "";
 	let statusCode = 0;
 	
+	// extract variables that we need to use in db
+	const { id } = event.pathParameters;
+	
 	const params = {
 		TableName: "Dementia_Record",
 		// Delete record by key
 		Key: {
-			id: '12345'
+			id: id
 		}
 	};
 	

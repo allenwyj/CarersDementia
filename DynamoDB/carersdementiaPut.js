@@ -8,12 +8,15 @@ exports.handler = async (event, context) => {
 	let responseBody = "";
 	let statusCode = 0;
 	
+	// extract variables that we need to use in db
+	const { id, group } = JSON.parse(event.body);
+	
 	const params = {
 		TableName: "Dementia_Record",
 		// contain the details what records will be added into table
 		Item: {
-			id: '12345',
-			record_name: 'AAAA'
+			id: id,
+			group: group
 		}
 	};
 	

@@ -8,15 +8,18 @@ exports.handler = async (event, context) => {
 	let responseBody = "";
 	let statusCode = 0;
 	
+	// extract variables that we need to use in db
+	const { id, group_name } = JSON.parse(event.body);
+	
 	const params = {
 		TableName: "Dementia_Record",
 		// contain the details what records will be added into table
 		Key: {
-			id: '12345'
+			id: id
 		},
-		UpdateExpression: "set record_name = :n", // set which field needs to be updated
+		UpdateExpression: "set group_name = :n", // set which field needs to be updated
 		ExpressionAttributeValues: {
-			":n" : "Water Pumps"
+			":n" : group_name
 		},
 		ReturnValues: "UPDATED_NEW" 
 	};
