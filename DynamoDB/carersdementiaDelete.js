@@ -9,10 +9,10 @@ exports.handler = async (event, context) => {
 	let statusCode = 0;
 	
 	const params = {
-		TableName: "Dementia_Records",
+		TableName: "Dementia_Record",
 		// Delete record by key
 		Key: {
-			subject_id: '12345'
+			id: '12345'
 		}
 	};
 	
@@ -29,7 +29,6 @@ exports.handler = async (event, context) => {
 		statusCode: statusCode,
 		headers: {
 			"Content-Type" : " application/json"
-			
 		},
 		body: responseBody //send back the responseBody
 	};

@@ -9,11 +9,11 @@ exports.handler = async (event, context) => {
 	let statusCode = 0;
 	
 	const params = {
-		TableName: "Dementia_Records",
+		TableName: "Dementia_Record",
 		// contain the details what records will be added into table
 		Item: {
-			subject_id: '12345',
-			recordname: 'AAAA'
+			id: '12345',
+			record_name: 'AAAA'
 		}
 	};
 	

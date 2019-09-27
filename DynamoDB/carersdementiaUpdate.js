@@ -9,12 +9,12 @@ exports.handler = async (event, context) => {
 	let statusCode = 0;
 	
 	const params = {
-		TableName: "Dementia_Records",
+		TableName: "Dementia_Record",
 		// contain the details what records will be added into table
 		Key: {
-			subject_id: '12345'
+			id: '12345'
 		},
-		UpdateExpression: "set productname = :n", // set which field needs to be updated
+		UpdateExpression: "set record_name = :n", // set which field needs to be updated
 		ExpressionAttributeValues: {
 			":n" : "Water Pumps"
 		},
