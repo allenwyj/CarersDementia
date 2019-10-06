@@ -2,16 +2,25 @@
 <style>
 #cupChart {
   width: 100%;
-  height: 500px;
+  height: 300px;
 }
 
 </style>
 
+<!-- Resources -->
+<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/spiritedaway.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 <!-- Chart code -->
 <script>
+
 am4core.ready(function() {
 
 // Themes begin
+am4core.useTheme(am4themes_spiritedaway);
 am4core.useTheme(am4themes_animated);
 // Themes end
 
@@ -21,25 +30,15 @@ var chart = am4core.create("cupChart", am4charts.SlicedChart);
 chart.hiddenState.properties.opacity = 0; // this makes initial fade in effect
 chart.paddingLeft = 150;
 
-chart.data = [{
-    "name": "Alzheimer’s disease",
-    "value": 65
-}, {
-    "name": "Vascular dementia",
-    "value": 15
-}, {
-    "name": "Frontotemporal dementia",
-    "value": 10
-}, {
-    "name": "Dementia with Lewy bodies",
-    "value": 4
-}, {
-    "name": "Younger-onset Alzheimer",
-    "value": 5
-}, {
-    "name": "Others",
-    "value": 1
-}];
+// Connect to api gateway
+const rootURL = 'https://o0hm66rocd.execute-api.ap-southeast-2.amazonaws.com/prod/dementia-record';
+
+// fetch data from DynamoDB
+$.getJSON(rootURL, function (data) {
+	chart.data = data;
+});
+
+console.log(chart.data);
 
 var series = chart.series.push(new am4charts.PictorialStackedSeries());
 series.dataFields.value = "value";
@@ -54,17 +53,7 @@ series.maskSprite.path = iconPath;
 series.ticks.template.locationX = 1;
 series.ticks.template.locationY = 0;
 
-series.labelsContainer.width = 300;
-
-chart.legend = new am4charts.Legend();
-chart.legend.position = "top";
-chart.legend.paddingRight = 160;
-chart.legend.paddingBottom = 40;
-let marker = chart.legend.markers.template.children.getIndex(0);
-chart.legend.markers.template.width = 40;
-chart.legend.markers.template.height = 40;
-marker.cornerRadius(20,20,20,20);
-
+series.labelsContainer.width = 300
 }); // end am4core.ready()
 </script>
 
