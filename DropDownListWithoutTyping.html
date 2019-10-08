@@ -7,8 +7,11 @@
                     <input name="stype" type="hidden" value="gd_place" data-slug="places" />
                     <div class="gd-search-input-wrapper gd-search-field-near ">
                         <select class="snear" autocomplete="off" list="cats" name="snear" aria-label="Suburb Name">
-                            <option disabled="disabled" selected="selected" value="">Select Your Suburb</option>
-
+                            
+                            // showing information in the dropdown list
+                            <option disabled="disabled" selected="selected" value=""> - Select Your Suburb - </option>
+                            
+                            // values of the list
                             <option value="Ashburton, Melbourne">Ashburton</option>
                             <option value="Box Hill, Melbourne">Box Hill</option>
                             <option value="Burwood, Melbourne">Burwood</option>
@@ -40,6 +43,7 @@
                             <option value="Sunbury, Melbourne">Sunbury</option>
                         </select>
                     </div>
+                    // create the button for search
                     <button class="geodir_submit_search" data-title="fas fa-search" aria-label="fas fa-search"><i class="fas fas fa-search" aria-hidden="true"></i><span class="sr-only">Search</span></button>
 
                 </div>
