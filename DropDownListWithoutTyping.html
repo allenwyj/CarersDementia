@@ -1,3 +1,4 @@
+<!--This part of html code is for creating a dropdown list for user to search for a selected type of help centre and a selected suburb around melbourne in 'Find Help Centre' Page-->
 <div class="geodir-search-container">
     <form class="geodir-listing-search gd-search-bar-style" action="https://carersdementia.tk/search/" method="get" name="geodir-listing-search">
         <input name="geodir_search" type="hidden" value="1" />
@@ -5,45 +6,55 @@
             <div class="clearfix geodir-loc-bar-in">
                 <div class="geodir-search">
                     <input name="stype" type="hidden" value="gd_place" data-slug="places" />
-                    <div class="gd-search-input-wrapper gd-search-field-near ">
-                        <select class="snear" autocomplete="off" list="cats" name="snear" aria-label="Suburb Name">
-                            
-                            // showing information in the dropdown list
-                            <option disabled="disabled" selected="selected" value=""> - Select Your Suburb - </option>
-                            
-                            // values of the list
-                            <option value="Ashburton, Melbourne">Ashburton</option>
-                            <option value="Box Hill, Melbourne">Box Hill</option>
-                            <option value="Burwood, Melbourne">Burwood</option>
-                            <option value="Brighton, Melbourne">Brighton</option>
-                            <option value="Brunswick, Melbourne">Brunswick</option>
-                            <option value="Caulfield, Melbourne">Caulfield</option>
-                            <option value="Clayton, Melbourne">Clayton</option>
-                            <option value="Carlton, Melbourne">Carlton</option>                            
-                            <option value="Doncaster East, Melbourne">Doncaster East</option>
-                            <option value="Eltham, Melbourne">Eltham</option>
-                            <option value="Footscray, Melbourne">Footscray</option>
-                            <option value="Forest Hill, Melbourne">Forest Hill</option>
-                            <option value="Ferntree Gully, Melbourne">Ferntree Gully</option>
-                            <option value="Glen waverley, Melbourne">Glen waverley</option>
-                            <option value="Kew, Melbourne">Kew</option>
-                            <option value="Keysborough, Melbourne">Keysborough</option>
-                            <option value="Mulgrave, Melbourne">Mulgrave</option>
-                            <option value="Mount Waverley, Melbourne">Mount Waverley</option>
-                            <option value="Melbourne, Melbourne">Melbourne</option>
-                            <option value="Malvern, Melbourne">Malvern</option>
-                            <option value="Mooroolbark, Melbourne">Mooroolbark</option>
-                            <option value="Newcomb, Geelong">Newcomb</option>
-                            <option value="New Gisborne, Melbourne">New Gisborne</option>
-                            <option value="Oakleigh, Melbourne">Oakleigh</option>
-                            <option value="Toorak, Melbourne">Toorak</option>
-                            <option value="Traralgon, Melbourne">Traralgon</option>
-                            <option value="South Melbourne, Melbourne">South Melbourne</option>
-                            <option value="Surrey Hills, Melbourne">Surrey Hills</option>
-                            <option value="Sunbury, Melbourne">Sunbury</option>
+
+                    <div class='gd-search-input-wrapper gd-search-field-search'>
+
+                        <select class="search_text gd_search_text" autocomplete="off" list="cats" name="s" aria-label="Group Name">
+                            <option disabled="disabled" selected="selected" value=""> - Select Type of Groups - </option>
+
+                            <option value="community">Community</option>
+                            <option value="counselling">Counselling</option>
                         </select>
                     </div>
-                    // create the button for search
+
+                    <div class="gd-search-input-wrapper gd-search-field-near ">
+                        <select class="snear" autocomplete="off" list="cats" name="snear" aria-label="Suburb Name">
+                            <!--showing information in the dropdown list-->
+                            <option disabled="disabled" selected="selected" value=""> - Select Your Suburb - </option>
+
+                            <!--values of the list-->
+                            <option value="Ashburton, Melbourne">Ashburton, Melbourne</option>
+                            <option value="Box Hill, Melbourne">Box Hill, Melbourne</option>
+                            <option value="Burwood, Melbourne">Burwood, Melbourne</option>
+                            <option value="Brighton, Melbourne">Brighton, Melbourne</option>
+                            <option value="Brunswick, Melbourne">Brunswick, Melbourne</option>
+                            <option value="Caulfield, Melbourne">Caulfield, Melbourne</option>
+                            <option value="Clayton, Melbourne">Clayton, Melbourne</option>
+                            <option value="Carlton, Melbourne">Carlton, Melbourne</option>                            
+                            <option value="Doncaster East, Melbourne">Doncaster East, Melbourne</option>
+                            <option value="Eltham, Melbourne">Eltham, Melbourne</option>
+                            <option value="Footscray, Melbourne">Footscray, Melbourne</option>
+                            <option value="Forest Hill, Melbourne">Forest Hill, Melbourne</option>
+                            <option value="Ferntree Gully, Melbourne">Ferntree Gully, Melbourne</option>
+                            <option value="Glen waverley, Melbourne">Glen waverley, Melbourne</option>
+                            <option value="Kew, Melbourne">Kew, Melbourne</option>
+                            <option value="Keysborough, Melbourne">Keysborough, Melbourne</option>
+                            <option value="Mulgrave, Melbourne">Mulgrave, Melbourne</option>
+                            <option value="Mount Waverley, Melbourne">Mount Waverley, Melbourne</option>
+                            <option value="Melbourne, Melbourne">Melbourne, Melbourne</option>
+                            <option value="Malvern, Melbourne">Malvern, Melbourne</option>
+                            <option value="Mooroolbark, Melbourne">Mooroolbark, Melbourne</option>
+                            <option value="Newcomb, Geelong">Newcomb, Melbourne</option>
+                            <option value="New Gisborne, Melbourne">New Gisborne, Melbourne</option>
+                            <option value="Oakleigh, Melbourne">Oakleigh, Melbourne</option>
+                            <option value="Toorak, Melbourne">Toorak, Melbourne</option>
+                            <option value="Traralgon, Melbourne">Traralgon, Melbourne</option>
+                            <option value="South Melbourne, Melbourne">South Melbourne, Melbourne</option>
+                            <option value="Surrey Hills, Melbourne">Surrey Hills, Melbourne</option>
+                            <option value="Sunbury, Melbourne">Sunbury, Melbourne</option>
+                        </select>
+                    </div>
+                    <!--create the button for search-->
                     <button class="geodir_submit_search" data-title="fas fa-search" aria-label="fas fa-search"><i class="fas fas fa-search" aria-hidden="true"></i><span class="sr-only">Search</span></button>
 
                 </div>
