@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <!-- code reference: https://www.w3schools.com/howto/howto_css_modals.asp-->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {font-family: Arial, Helvetica, sans-serif;}
+
+            /* The Modal (background) */
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                padding-top: 100px; /* Location of the box */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            }
+
+            /* Modal Content */
+            .modal-content {
+                background-color: #fefefe;
+                margin: auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%;
+            }
+
+            /* The Close Button */
+            .close {
+                color: #aaaaaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="resourceListBtn">Resource List</button>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div>
+                    <div>
+                        <!-- List references-->
+                        Resources: <br>
+                        <a href="https://www.caregiver.org/" target="_blank" rel="noopener noreferrer">Family Caregiver Alliance (FCA)</a>
+                        <br>
+                        <a href="https://www.alz.org/help-support/caregiving/caregiver-health/caregiver-stress" target="_blank" rel="noopener noreferrer">Alzheimer's Association</a>
+                        <br>
+                        <a href="https://www.homewatchcaregivers.com/resources-and-specialty-care/dementia/support-for-caregivers/the-10-warning-signs-of-stress/" target="_blank" rel="noopener noreferrer">Homewatch CareGivers</a>
+                        <br>
+                        <a href="https://www.helpguide.org/articles/stress/caregiver-stress-and-burnout.htm" target="_blank" rel="noopener noreferrer">HelpGuide</a>
+                        <br>
+                        <a href="https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/dementia-taking-care-of-carers" target="_blank" rel="noopener noreferrer">Better Health Channel</a>
+                        <br>
+                        <a href="https://alzheimer.ca/en/Home/Living-with-dementia/Caring-for-someone/Self-care-for-the-caregiver/Reducing-caregiver-stress" target="_blank" rel="noopener noreferrer">Alzheimer Society of Canada</a><br>
+                    </div>
+                    
+                    <!-- List icon resources-->
+                    <div>
+                        Icons made by: <br>
+                        <a title="Freepik" href="https://www.flaticon.com/authors/freepik" target="_blank" rel="noopener noreferrer">Freepik</a> from <a title="Flaticon" href="https://www.flaticon.com/" target="_blank" rel="noopener noreferrer">www.flaticon.com</a>
+                        <br>
+                        <a title="Smashicons" href="https://www.flaticon.com/authors/smashicons" target="_blank" rel="noopener noreferrer">Smashicons</a> from <a title="Flaticon" href="https://www.flaticon.com/" target="_blank" rel="noopener noreferrer">www.flaticon.com</a><br>
+                        <a title="Flat Icons" href="https://www.flaticon.com/authors/flat-icons" target="_blank" rel="noopener noreferrer">Flat Icons</a> from <a title="Flaticon" href="https://www.flaticon.com/" target="_blank" rel="noopener noreferrer">www.flaticon.com</a>
+                        <br>
+                        <a title="Darius Dan" href="https://www.flaticon.com/authors/darius-dan" target="_blank" rel="noopener noreferrer">Darius Dan</a> from <a title="Flaticon" href="https://www.flaticon.com/" target="_blank" rel="noopener noreferrer">www.flaticon.com</a>
+                    </div>
+                    <!-- Image reference -->
+                    <div>
+                        Images: <br>
+                        <a href="https://www.pexels.com/" target="_blank" rel="noopener noreferrer">Pexels</a>
+                    </div>
+                    <!-- Video reference -->
+                    <div>
+                        Videos: <br>
+                        <a href="https://www.youtube.com/watch?v=Z3g-evIsaFw" target="_blank" rel="noopener noreferrer">NIH Clinical Center</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Get the modal
+            var modal = document.getElementById("myModal");
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("resourceListBtn");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks the button, open the modal 
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+
+    </body>
+</html>
