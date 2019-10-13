@@ -4,20 +4,26 @@
 <!-- Styles -->
 <style>
 #sunburstChart {
-  height: 650px;
+  top:50px;
+  height: 700px;
+  margin-bottom: 30px;
 }
 </style>
 
 <!-- Resources -->
+<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/charts.js"></script>
 <script src="https://www.amcharts.com/lib/4/plugins/sunburst.js"></script>
-<script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
-
+<script src="https://www.amcharts.com/lib/4/themes/dataviz.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <!-- Chart code -->
 <script>
 am4core.ready(function() {
 
 // Themes begin
-am4core.useTheme(am4themes_material);
+//am4core.useTheme(am4themes_spiritedaway);
+am4core.useTheme(am4themes_dataviz);
 am4core.useTheme(am4themes_animated);
 // Themes end
 
@@ -26,81 +32,12 @@ var sunburstChart = am4core.create("sunburstChart", am4plugins_sunburst.Sunburst
 sunburstChart.padding(0,0,0,0);
 sunburstChart.radius = am4core.percent(98);
 
-sunburstChart.data = [
-{
-  name: "< 65",
-  children: [
-    { name: "Male", children:[
-         {name: "mild", value: 12600*0.55},
-         {name: "moderate", value: 12600*0.3},
-         {name: "severe", value: 12600*0.15}
-     ] },
-    { name: "Female", children:[
-         {name: "mild", value: 11300*0.55},
-         {name: "moderate", value: 11300*0.3},
-         {name: "severe", value: 11300*0.15}
-     ] }
-  ]
-},
-{
-  name: "65~74",
-  children: [
-    {
-      name: "Male",
-      children: [
-        { name: "mild", value: 25200*0.55},
-        { name: "moderate", value: 25200*0.3},
-        { name: "severe", value: 25200*0.15}
-      ]
-    },
-    { 
-      name: "Female", 
-      children: [
-        { name: "mild", value: 28900*0.55},
-        { name: "moderate", value: 28900*0.30},
-        { name: "severe", value: 28900*0.15}
-      ]
-    }
-  ]
-},
-{
-  name: "75~84",
-  children: [
-    { name: "Male", 
-    children:[
-         {name: "mild", value: 39800*0.55},
-         {name: "moderate", value: 39800*0.3},
-         {name: "severe", value: 39800*0.15}
-     ]},
-    { name: "Female", 
-     children:[
-         {name: "mild", value: 57500*0.55},
-         {name: "moderate", value: 57500*0.3},
-         {name: "severe", value: 57500*0.15}
-     ] }
-  ]
-},
-{
-  name: "> 85",
-  children: [
-    {
-      name: "Male",
-      children:[
-         {name: "mild", value: 35600*0.55},
-         {name: "moderate", value: 35600*0.3},
-         {name: "severe", value: 35600*0.15}
-     ]
-    },
-    {
-      name: "Female",
-      children:[
-         {name: "mild", value: 87000*0.55},
-         {name: "moderate", value: 87000*0.3},
-         {name: "severe", value: 87000*0.15}
-     ]
-    }
-  ]
-}];
+const rootURL = 'https://yv2m4twk9j.execute-api.ap-southeast-2.amazonaws.com/prod/sunburst';
+
+// fetch data from DynamoDB
+$.getJSON(rootURL, function (data) {
+	sunburstChart.data = data;
+});
 
 sunburstChart.colors.step = 2;
 sunburstChart.fontSize = 11;
@@ -108,7 +45,7 @@ sunburstChart.innerRadius = am4core.percent(10);
 
 // define data fields
 sunburstChart.dataFields.value = "value";
-sunburstChart.dataFields.name = "name";
+sunburstChart.dataFields.name = "akey";
 sunburstChart.dataFields.children = "children";
 
 
