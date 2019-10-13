@@ -1,0 +1,123 @@
+/* Change the text size for location list title */
+.geodir-entry-title a {
+	font-weight: bold;
+	font-size: 20px;
+	font-family: alias;
+}
+
+.gd-fav-info-wrap a {
+    vertical-align: top;
+    font-size: 14px;
+}
+
+/* Change the text size of location list table */
+.gd-list-rating-text a {
+	font-size: 14px
+}
+
+/* Change the bottom margin between title and header in Location page */
+.entry-title {
+	margin-bottom: -30px;
+}
+
+/* Change the margin top between title and header in Counselling and Community page */
+#primary {
+	margin-top: 5px;
+}
+
+/* This is for changing the layout of About You page, five facts tab size. */
+.eael-infobox{
+    text-align: center;
+    height: 280px;
+}
+
+/* This is for changing the layout of About You page, five facts tab's content padding. */
+.infobox-content p {
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+/* This is for centering 'Manage Your Stress' title */
+.elementor-15 .elementor-element.elementor-element-9eef498 .eael-dual-header .title {
+    text-align: center;
+}
+
+/* Set font family and size for the home page tags' titles: Programs, Community Group, Respite Care Service and Daily Activity Tips */
+.elementor-15 .elementor-element.elementor-element-f0c64e7 .title {
+	font-size: 25px;
+}
+
+/* Set font family and size for the home page tags' titles: Counselling and Tips */
+.elementor-15 .elementor-element.elementor-element-6e5cadd .title {
+	font-size: 25px;
+}
+
+/* 
+ * Set the padding for the footer bar
+ * */
+@media (min-width: 769px) {
+	.ast-footer-overlay {
+		padding-top: 10px;
+		padding-bottom: 10px
+	}
+}
+
+/* The following three are using for changing the list view in the Archieve item Page*/
+/* Makes the country name hide */
+.geodir_post_meta.geodir-field-address span[itemprop="addressCountry"]{
+	display: none;
+} 
+
+/* Makes the state name hide */
+.geodir_post_meta.geodir-field-address span[itemprop="addressRegion"]{
+	display: none;
+} 
+
+/* Makes the city name show */
+.geodir_post_meta.geodir-field-address span[itemprop="addressLocality"]{
+	display: none;
+} 
+
+/* Hides the br tag between the above three values*/
+.geodir_post_meta.geodir-field-address br {
+	display: none;
+}
+
+.geodir-loc-bar {
+	margin: 0;
+}
+
+/* 
+ * Set the 'Impact of Caring' page (page id 16), section: 'Things that could help....' for the min height of each icon box in ipad view is 400px 
+ * */
+@media (max-width: 768px) {
+	.page-id-16 .elementor-icon-box-wrapper{
+		height: 400px;
+	}
+}
+
+/* 
+ * Set the resourceListBtn to the center in the tablet and mobile view
+ * */
+@media (max-width: 768px) {
+	#resourceListBtn{
+	margin:auto;
+	display:block;
+}
+}
+
+/* customized the footer botton for resource list. */
+#resourceListBtn{
+	border-radius: 0px;
+	font-size: 15px;
+	background-color: #3a3a3a;
+	padding:0;
+	padding-left: 10px;
+	color: #83d0f2;
+	border: 0px;
+}
+
+/* customized footber 'Resource List' hover effect */
+#resourceListBtn:hover{
+	text-decoration:underline;
+}
