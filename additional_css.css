@@ -109,11 +109,11 @@
 /* customized the footer botton for resource list. */
 #resourceListBtn{
 	border-radius: 0px;
-	font-size: 15px;
+	font-size: 17px;
 	background-color: #3a3a3a;
 	padding:0;
 	padding-left: 10px;
-	color: #83d0f2;
+	color: #ff9c00;
 	border: 0px;
 }
 
