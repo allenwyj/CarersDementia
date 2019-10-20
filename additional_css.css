@@ -88,15 +88,6 @@
 }
 
 /* 
- * Set the 'Impact of Caring' page (page id 16), section: 'Things that could help....' for the min height of each icon box in ipad view is 400px 
- * */
-@media (max-width: 768px) {
-	.page-id-16 .elementor-icon-box-wrapper{
-		height: 400px;
-	}
-}
-
-/* 
  * Set the resourceListBtn to the center in the tablet and mobile view
  * */
 @media (max-width: 768px) {
@@ -104,6 +95,13 @@
 	margin:auto;
 	display:block;
 }
+}
+
+/* 
+Set the quick links to be center in the tablet and mobile view */
+.elementor-element.elementor-element-e249880.elementor-widget.elementor-widget-wp-widget-nav_menu .elementor-widget-container{
+	display: flex;
+  justify-content: center;
 }
 
 /* customized the footer botton for resource list. */
@@ -120,4 +118,14 @@
 /* customized footber 'Resource List' hover effect */
 #resourceListBtn:hover{
 	text-decoration:underline;
+}
+
+/* Hide the ratings in the map bubble */
+.gd-bubble .geodir-post-rating {
+	display: none;
+}
+
+/* Hide the post navigation 'next_place' ' previous_place' */
+.post-navigation {
+    display: none;
 }
